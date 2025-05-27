@@ -2,7 +2,7 @@ import type { ActivityPortStore } from "features/port-activity/types";
 import { useAppStore } from "store/store";
 
 export const useActionCell = () => {
-    const { ActivityList, selectedPort, setActivityList, setModalState } =
+    const { ActivityList, selectedPort, setActivityList, setConfirmState } =
         useAppStore();
     const adjustRowPosition = (rowId: string) => {
         const newItems = () => {
@@ -32,7 +32,7 @@ export const useActionCell = () => {
                     : item
             )
         );
-        setModalState({ open: false, type: "", rowId: null });
+        setConfirmState({ open: false, type: "", rowId: null, anchorEl: null });
     };
 
     const copyRow = (rowId: number) => {
@@ -69,7 +69,7 @@ export const useActionCell = () => {
             )
         );
 
-        setModalState({ open: false, type: "", rowId: null });
+        setConfirmState({ open: false, type: "", rowId: null, anchorEl: null });
     };
 
     return {

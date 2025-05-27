@@ -1,5 +1,11 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "src",
+    "paths": {
+      "@base-component/*": ["base-component/*"]
+    },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,

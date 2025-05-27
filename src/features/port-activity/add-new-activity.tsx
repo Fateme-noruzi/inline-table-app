@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { useAppStore } from "store/store";
 import { GridAddIcon } from "@mui/x-data-grid";
 import type { ActivityPortStore } from "./types";
@@ -39,20 +39,34 @@ export const AddNewActivity = () => {
         }
     };
     return (
-        <div>
-            <Box display="flex" justifyContent="flex-end" >
-                <Button
-                    onClick={handleAddRow}
-                    variant="contained"
-                    color="inherit"
-                    size="small"
-                    sx={{ my: 2 }}
-                    disabled={!selectedPort?.id}
-                    startIcon={<GridAddIcon />}
-                >
-                    Add New
-                </Button>
+        <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ mb: 2 }}
+        >
+            <Box
+                sx={{
+                    borderLeft: "4px solid #1976d2",
+                    pl: 2,
+                }}
+            >
+                <Typography variant="h6" fontWeight="bold">
+                    Port Activity
+                </Typography>
             </Box>
-        </div>
+            <Button
+                onClick={handleAddRow}
+                variant="contained"
+                color="inherit"
+                size="small"
+                sx={{ my: 2 }}
+                disabled={!selectedPort?.id}
+                startIcon={<GridAddIcon />}
+            >
+                Add New
+            </Button>
+        </Stack>
+
     );
 };

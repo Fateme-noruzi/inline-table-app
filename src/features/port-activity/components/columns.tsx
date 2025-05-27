@@ -9,8 +9,8 @@ import { PercentageCell } from "./percentage-cell";
 import { EditableToDate } from "./date-cell/editable-todate";
 import { EditableFromDate } from "./date-cell/editable-fromdate";
 
-export const columns = () => {
-    return [
+export const baseColumns =
+    [
         {
             field: "day",
             headerName: "Day",
@@ -80,4 +80,10 @@ export const columns = () => {
             },
         },
     ];
-};
+
+
+export const columns = baseColumns.map(col => ({
+    ...col,
+    sortable: false,
+    disableColumnMenu: true,
+}));

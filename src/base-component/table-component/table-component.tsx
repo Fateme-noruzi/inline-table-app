@@ -41,6 +41,7 @@ export function TableComponent<T extends { id: string | number }>({
                             <TableRow
                                 key={row.id}
                                 hover
+                                //@ts-ignore
                                 selected={selectedRow?.id === row.id}
                                 onClick={() => onRowClick?.(row)
                                 }

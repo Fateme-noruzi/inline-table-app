@@ -4,24 +4,24 @@ import { create } from "zustand";
 interface AppStoreState {
     selectedPort: PortDataType | { id: string };
     ActivityList: any;
-    modalState: { open: boolean, type: string, rowId: string }
+    confirmState: { open: boolean, type: string, rowId: string, anchorEl: any }
     setActivityList: (list: any) => void
     setSelectedPort: (value: PortDataType) => void;
-    setModalState: (value: any) => void;
+    setConfirmState: (value: any) => void;
 
 }
 
 export const useAppStore = create<AppStoreState>()((set) => ({
     selectedPort: { id: '' },
     ActivityList: [],
-    modalState: { open: false, type: '', rowId: '' },
+    confirmState: { open: false, type: '', rowId: '', anchorEl: null },
     setActivityList: (list) => set((state) => ({
         ...state, ActivityList: list
     })),
     setSelectedPort: (selectedPort) => set((state) => ({
         ...state, selectedPort
     })),
-    setModalState: (modalState) => set((state) => ({
-        ...state, modalState
+    setConfirmState: (confirmState) => set((state) => ({
+        ...state, confirmState
     }))
 }));

@@ -3,32 +3,32 @@ import { useAppStore } from "store/store";
 import { useActionCell } from "./use-action-cell";
 
 export const ConfirmDialog = () => {
-    const { modalState, setModalState } = useAppStore();
+    const { confirmState, setConfirmState } = useAppStore();
     const { adjustRowPosition, deleteRow } = useActionCell();
     return <Dialog
-        open={modalState.open}
-        onClose={() => setModalState({ open: false, type: '', rowId: null })}
+        open={confirmState.open}
+        onClose={() => setConfirmState({ open: false, type: '', rowId: null, anchorEl: null })}
     >
         <DialogTitle>
-            {modalState.type === 'adjust' ? 'Adjust Row Position' : 'Delete Row Confirmation'}
+            {confirmState.type === 'adjust' ? 'Adjust Row Position' : 'Delete Row Confirmation'}
         </DialogTitle>
         <DialogContent>
             <DialogContentText>
-                {modalState.type === 'adjust'
+                {confirmState.type === 'adjust'
                     ? 'Do you want to automatically adjust the row position based on fromDate?'
                     : 'Are you sure you want to delete this row?'}
             </DialogContentText>
         </DialogContent>
         <DialogActions>
-            <Button onClick={() => setModalState({ open: false, type: '', rowId: null })}>
+            <Button onClick={() => setConfirmState({ open: false, type: '', rowId: null, anchorEl: null })}>
                 Cancel
             </Button>
             <Button
                 onClick={() => {
-                    if (modalState.type === 'adjust') {
-                        adjustRowPosition(modalState.rowId);
-                    } else if (modalState.type === 'delete') {
-                        deleteRow(modalState.rowId);
+                    if (confirmState.type === 'adjust') {
+                        adjustRowPosition(confirmState.rowId);
+                    } else if (confirmState.type === 'delete') {
+                        deleteRow(confirmState.rowId);
                     }
                 }}
                 color="primary"

@@ -12,6 +12,8 @@ export const DatePreview = ({ row, field }: GridRenderCellParams) => {
             flexDirection: 'column',
             overflow: 'hidden',
             lineHeight: 1.2,
+            justifyContent: 'center',
+            height: '100%',
         }}>
             <span>{topLine}</span>
             <span style={{ fontSize: '0.75rem', color: '#666' }}>{bottomLine}</span>
