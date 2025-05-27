@@ -1,6 +1,6 @@
 import { MenuItem, Select } from "@mui/material"
-import { PercentageOptions } from "../select-option"
 import type { GridRenderCellParams } from "@mui/x-data-grid"
+import { PercentageOptions } from "features/port-activity/select-option";
 
 export const PercentageCell = (params: GridRenderCellParams) => {
     const { row, api, field } = params

@@ -1,7 +1,7 @@
-import { columns } from "../components/columns";
 
 import { DataGrid, } from "@mui/x-data-grid";
 import { useActivityPortList } from "./use-activity-port-list";
+import { columns } from "./components/columns";
 
 export function ActivityPortList() {
     const {

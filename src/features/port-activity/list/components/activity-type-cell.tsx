@@ -1,6 +1,6 @@
 import { MenuItem, Select } from "@mui/material"
-import { ActivityTypeOptions } from "../select-option"
 import type { GridRenderCellParams } from "@mui/x-data-grid"
+import { ActivityTypeOptions } from "features/port-activity/select-option"
 
 export const ActivityTypeCell = (params: GridRenderCellParams) => {
     const { row, api, field } = params
