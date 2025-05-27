@@ -1,4 +1,4 @@
-import { ActivityPortList } from "./activity-port-list";
+import { ActivityPortList } from "./list/activity-port-list";
 
 import { AddNewActivity } from "./add-new-activity";
 

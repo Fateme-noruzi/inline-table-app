@@ -1,9 +1,8 @@
-import { columns } from "./components/columns";
-
-import { DataGrid, type GridRenderCellParams } from "@mui/x-data-grid";
+import type { GridRenderCellParams } from "@mui/x-data-grid";
+import type { ActivityPortDataType, ActivityPortStore } from "../types";
 import { useAppStore } from "store/store";
-import type { ActivityPortDataType, ActivityPortStore } from "./types";
-export function ActivityPortList() {
+
+export const useActivityPortList = () => {
     const { selectedPort, ActivityList, setActivityList } = useAppStore();
 
     const activityData =
@@ -57,16 +56,9 @@ export function ActivityPortList() {
         return '';
     };
 
-    return (
-        <DataGrid
-            rows={activityData}
-            hideFooter={true}
-            columns={columns}
-            editMode="cell"
-            processRowUpdate={processRowUpdate}
-            disableColumnMenu
-            //@ts-ignore
-            getRowClassName={getRowClassName}
-        />
-    );
+    return {
+        getRowClassName,
+        processRowUpdate,
+        activityData
+    }
 }

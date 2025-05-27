@@ -6,7 +6,6 @@ import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useActionCell } from "./use-action-cell";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { ConfirmDialog } from "./confirm-dialog";
 import { ConfirmPopover } from "./confirm-popover";
 
 export const ActionCell = (params: GridRenderCellParams) => {
